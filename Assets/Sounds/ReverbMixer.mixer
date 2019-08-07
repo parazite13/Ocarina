@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NewAudioMixer
+  m_Name: ReverbMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -37,7 +37,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  - {fileID: 8193958177027738109}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -75,45 +74,3 @@ AudioMixerSnapshotController:
     39464c5fe8e32574984236de990604b0: 0
     c2affa7f3b136d849bbf87fe9bb0aaff: 0.0448
   m_TransitionOverrides: {}
---- !u!244 &8193958177027738109
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 03d38b2848caad940a70f4e24ad49aea
-  m_EffectName: SFX Reverb
-  m_MixLevel: 439b8e0fcc2c62e4e8514c4dff8458f8
-  m_Parameters:
-  - m_ParameterName: Dry Level
-    m_GUID: 127171cb75084904986e6baefa8cf063
-  - m_ParameterName: Room
-    m_GUID: 39464c5fe8e32574984236de990604b0
-  - m_ParameterName: Room HF
-    m_GUID: a18ea1928550d0e49b11c150260d1dff
-  - m_ParameterName: Decay Time
-    m_GUID: 3acd471ce5b94224893967740020a25f
-  - m_ParameterName: Decay HF Ratio
-    m_GUID: 57d3eae96e25c1a408c5e5b59d9747c7
-  - m_ParameterName: Reflections
-    m_GUID: b681f661d0e7330438e51d6ed46e1984
-  - m_ParameterName: Reflect Delay
-    m_GUID: e7a8214e72e4fb348b9c893e02c89603
-  - m_ParameterName: Reverb
-    m_GUID: daf566e4c684ab945b2ad0e9fcb4ba9b
-  - m_ParameterName: Reverb Delay
-    m_GUID: c8584b138ed915a43b0346941ccb6615
-  - m_ParameterName: Diffusion
-    m_GUID: 789afd5496856b94b8351f5edee7752b
-  - m_ParameterName: Density
-    m_GUID: 53f27b7287ae0cf42965732e79acb870
-  - m_ParameterName: HF Reference
-    m_GUID: a4b0f5683fc733a40aed6c777ff5fd32
-  - m_ParameterName: Room LF
-    m_GUID: 02f88cf0a9c9b8a42b7d4a2b46ac620b
-  - m_ParameterName: LF Reference
-    m_GUID: ab176731f02dcab479a5d55a685c6726
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
