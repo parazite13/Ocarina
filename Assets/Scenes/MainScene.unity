@@ -5411,8 +5411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e93a70c0815ba044afd81d999d1d4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerLevel: 0.1
-  intensity: 150
+  intensity: 250
   release: 5
   mixer: {fileID: 24100000, guid: 59a5ac2c56c307c4a8c62481ecccb5cf, type: 2}
   microphoneEnable: {fileID: 21300000, guid: 668273ecd7352564b9e2443d4c4b2b57, type: 3}

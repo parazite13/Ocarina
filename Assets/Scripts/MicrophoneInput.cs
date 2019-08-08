@@ -6,11 +6,9 @@ using UnityEngine.UI;
 
 public class MicrophoneInput : MonoBehaviour
 {
-    [SerializeField]
-    private float triggerLevel;
 
     [SerializeField]
-    private float intensity = 40;
+    private float intensity = 200;
 
     [SerializeField]
     private float release = 5;
@@ -36,12 +34,15 @@ public class MicrophoneInput : MonoBehaviour
 
     private bool enable = false;
 
+    private bool ready = false;
+
     IEnumerator Start()
     {
         waveData = new float[dec];
         clipRecord = Microphone.Start(Microphone.devices.First(), true, 999, 44100);
-        yield return new WaitForSeconds(1f);
-        enable = true;
+        yield return new WaitForSeconds(0.5f); // wait to ensure audio buffer is filled
+        ready = true;
+        ToggleActivation();
     }
 
     void Update()
@@ -62,16 +63,9 @@ public class MicrophoneInput : MonoBehaviour
                 }
             }
 
-            if(levelMax > triggerLevel)
-            {
-                mixer.GetFloat("Volume", out float current);
-                mixer.SetFloat("Volume", Mathf.Lerp(current, levelMax * intensity - 100, Time.deltaTime * release));
-            }
-            else
-            {
-                mixer.GetFloat("Volume", out float current);
-                mixer.SetFloat("Volume", Mathf.Lerp(current, current - 5, Time.deltaTime * release));
-            }
+            mixer.GetFloat("Volume", out float current);
+            mixer.SetFloat("Volume", Mathf.Min(Mathf.Lerp(current, levelMax * intensity - 100, Time.deltaTime * release), 10));
+
         }
         else
         {
@@ -81,7 +75,10 @@ public class MicrophoneInput : MonoBehaviour
 
     public void ToggleActivation()
     {
-        enable = !enable;
-        spriteRenderer.sprite = enable ? microphoneEnable : microphoneDisable;
+        if(ready)
+        {
+            enable = !enable;
+            spriteRenderer.sprite = enable ? microphoneEnable : microphoneDisable;
+        }
     }
 }
