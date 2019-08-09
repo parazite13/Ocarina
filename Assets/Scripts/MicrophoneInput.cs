@@ -64,7 +64,7 @@ public class MicrophoneInput : MonoBehaviour
             }
 
             mixer.GetFloat("Volume", out float current);
-            mixer.SetFloat("Volume", Mathf.Min(Mathf.Lerp(current, levelMax * intensity - 100, Time.deltaTime * release), 10));
+            mixer.SetFloat("Volume", Mathf.Min(Mathf.Lerp(current, (float)(levelMax * intensity) - 100, Time.deltaTime * release), 10));
 
         }
         else
